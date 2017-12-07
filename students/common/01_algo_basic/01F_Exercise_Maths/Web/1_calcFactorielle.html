@@ -15,6 +15,35 @@
         // Calculer sa factorielle, c'est à dire : n*(n-1)*(n-2)(...) jusqu'à (n-k)=1
         let factorielle = -1;
         // TODO : Exercice ! Il faut utiliser un while() ou un for()
+
+        // Représentation structurelle du programme
+        // On part avec une valeur donnée, par exemple 4
+        // Nous on veut trouver x, tel que x = 4 * 3 * 2 * 1
+        // Autrement dit x = 4 * (4-1) * (4-2) * (4-3)
+        // Ce qu'on voudra :
+        // 1) Partir du nombre saisi pour le produit
+        // 2) Avoir un résultat intermédiaire qu'on calcule au fur et à mesure
+        // 3) A chaque fois multiplier le résultat intermédiaire par le produit suivant (qui vaut nbSaisi-1, puis nbSaisi-2, etc jusqu'à atteindre x1)
+        // 4) S'arrêter avant de multiplier par zéro ^^
+
+        /*
+
+            RAISONNEMENT ALGORITHMIQUE :
+
+            nombre nbSaisi = Demander à user saisir nombre
+            nombre resultatIntermediaire = copie(nbSaisie)
+
+            Pour k allant de 1 à (nbSaisi-1), faire :
+                multiplier la valeur courante de résultat intermédiaire avec (nbSaisi-1)
+                stocker ce résultat dans resultatIntermediaire et écraser ainsi le précédent résultat
+            
+            Afficher résultat intermédiaire
+
+
+        */
+
+
+
         // Afficher le résultat sur la page ou en console
         console.log(factorielle);
     
