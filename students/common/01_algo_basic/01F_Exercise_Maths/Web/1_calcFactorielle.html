@@ -11,8 +11,8 @@
     <script>
     
         // Demander à l'utilisateur de saisir un nombre
-        let nbSaisi = window.prompt("Veuillez saisir un nombre entier positif.");
-        // Calculer sa factorielle
+        let nbSaisi = Number.parseInt(window.prompt("Veuillez saisir un nombre entier positif."));
+        // Calculer sa factorielle, c'est à dire : n*(n-1)*(n-2)(...) jusqu'à (n-k)=1
         let factorielle = -1;
         // TODO : Exercice ! Il faut utiliser un while() ou un for()
         // Afficher le résultat sur la page ou en console

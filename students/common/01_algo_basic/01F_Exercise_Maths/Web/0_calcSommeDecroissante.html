@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculateur de factorielle</title>
+</head>
+<body>
+
+    <script>
+    
+        // Demander à l'utilisateur de saisir un nombre
+        let nbSaisi = Number.parseInt(window.prompt("Veuillez saisir un nombre entier positif."));
+        // Calculer n+(n-1)+(n-2)(...) jusqu'à (n-k)=1
+        let sommeDecroissante = 0;
+        
+        // On copie le nombre initial pour ne pas le modifier
+        let valeurActuelle = nbSaisi;
+        // Tant que notre copie vaut au moins 1, on va faire des sommes
+        while (valeurActuelle > 0) {
+            // Ajout de la valeur de n-k à la somme
+            sommeDecroissante = sommeDecroissante + valeurActuelle;
+            // On décrémente k de 1
+            valeurActuelle = valeurActuelle - 1;
+        }
+
+        // Afficher le résultat sur la page ou en console
+        console.log(sommeDecroissante);
+    
+    </script>
+
+
+</body>
+</html>
