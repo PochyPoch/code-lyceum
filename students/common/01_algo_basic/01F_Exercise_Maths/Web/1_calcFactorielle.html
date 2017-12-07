@@ -13,8 +13,10 @@
         // Demander à l'utilisateur de saisir un nombre
         let nbSaisi = Number.parseInt(window.prompt("Veuillez saisir un nombre entier positif."));
         // Calculer sa factorielle, c'est à dire : n*(n-1)*(n-2)(...) jusqu'à (n-k)=1
-        let factorielle = -1;
+        let factorielle = nbSaisi;
         // TODO : Exercice ! Il faut utiliser un while() ou un for()
+
+        for (let k=1; k<nbSaisi; k++) factorielle *= nbSaisi-k;
 
         // Représentation structurelle du programme
         // On part avec une valeur donnée, par exemple 4
