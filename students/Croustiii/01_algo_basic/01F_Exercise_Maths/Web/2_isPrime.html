@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prime solver</title>
+</head>
+<body>
+
+    <script>
+    
+        // Demander à l'user de saisir un nombre
+        let nbSaisi = Number.parseInt(window.prompt("Veuillez saisir un nombre entier positif."));
+        // Déterminer si le nombre est premier
+        let diviseurs = 1;
+        let resultat = 0;
+        var tableauResultats = []
+        
+        // trouver l'ensemble des diviseurs 
+        for (let k = 2; k < nbSaisi; k++) {
+            let resultat = nbSaisi / k;
+            // determiner si resultat est un nombre entier et si oui l'ajouter au tableau
+            
+            tableauResultats = push (resultat);
+        }
+        // Afficher le résultat
+        if (tableauResultats = 1 , nbSaisi) {
+            window.prompt ("Ce Nombre est un nombre premier")
+        }
+        else window.prompt ("Ce Nombre n'est pas un nombre premier")
+        
+    </script>
+    
+</body>
+</html>
