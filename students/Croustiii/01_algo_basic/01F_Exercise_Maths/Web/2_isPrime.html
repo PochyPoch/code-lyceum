@@ -13,22 +13,26 @@
         // Demander à l'user de saisir un nombre
         let nbSaisi = Number.parseInt(window.prompt("Veuillez saisir un nombre entier positif."));
         // Déterminer si le nombre est premier
-        let diviseurs = 1;
-        let resultat = 0;
-        var tableauResultats = []
         
-        // trouver l'ensemble des diviseurs 
+        let resultat = 0;
+        let isPrime = true;
+
+        // si je trouve un diviseur prime devient false
         for (let k = 2; k < nbSaisi; k++) {
-            let resultat = nbSaisi / k;
-            // determiner si resultat est un nombre entier et si oui l'ajouter au tableau
-            
-            tableauResultats = push (resultat);
+            // 
+            let resultat = nbSaisi % k;
+
+            if (resultat = 0) {
+                if (k != nbSaisi && k != 1)
+                isPrime = false
+                break;
+            }
         }
         // Afficher le résultat
-        if (tableauResultats = 1 , nbSaisi) {
+        if (isPrime = true) {
             window.prompt ("Ce Nombre est un nombre premier")
         }
-        else window.prompt ("Ce Nombre n'est pas un nombre premier")
+        else window.prompt ("Ce Nombre n'est pas un nombre premier");
         
     </script>
     
