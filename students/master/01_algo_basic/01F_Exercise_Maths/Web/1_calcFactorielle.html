@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculateur de factorielle</title>
+</head>
+<body>
+
+    <script>
+    
+        // Demander à l'utilisateur de saisir un nombre
+        let nbSaisi = Number.parseInt(window.prompt("Veuillez saisir un nombre entier positif."));
+
+        // On initialise le résultat avec le nombre saisi
+        let factorielle = nbSaisi;
+
+        // Pour k allant de 1 à nb-1, de 1-en-1
+        for (let k=1; k<nbSaisi; k++) 
+            factorielle *= nbSaisi-k;
+
+        // Afficher le résultat sur la page ou en console
+        console.log(factorielle);
+    
+    </script>
+
+
+</body>
+</html>

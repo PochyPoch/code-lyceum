@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prime finder</title>
+</head>
+<body>
+
+    <script>
+    
+        // Recherche automatique des 100 premiers nombres premiers
+        let primeNumbers = [];
+        let currentInteger = 1;
+
+        while (primeNumbers.length < 100) {
+
+            if (isPrime(currentInteger)) primeNumbers.push(currentInteger);
+
+            currentInteger++;
+        }
+
+        // Afficher le résultat
+        console.log("Voici les 100 premiers nombres premiers : " + primeNumbers);
+        
+        /**
+         * Permet de savoir si un nombre est premier ou pas.
+         * @param {Number} nb Nombre entier positif à tester.
+         * @returns true si le nombre est premier, false sinon.
+         */
+        function isPrime(nb) {
+            for (let currentInt=2; currentInt<nb; currentInt++) {
+                // Si on trouve un diviseur entre 2 et nb-1, il n'est pas premier
+                if (nb % currentInt == 0) return false;
+            }
+            // Si on arrive jusque-là, il est premier
+            return true;
+        }
+        
+    </script>
+    
+</body>
+</html>

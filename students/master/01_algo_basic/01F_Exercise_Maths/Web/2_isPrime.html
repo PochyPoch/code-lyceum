@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Prime solver</title>
+</head>
+<body>
+
+    <script>
+        
+        // Affichera le prompt à l'infini jusqu'à ce que l'user arrête de donner des nombres valides
+        let nbSaisi = Number.NaN; // Par défaut si on initialise pas ce serait le cas, on le fait explicitement pr la clarté
+        while (!isNaN(nbSaisi = askNumberToUser())) {
+            // Stockage resultat
+            let estPremier = true;
+    
+            // Un nombre est premier s'il est divisible uniquement par 1 et par lui-même
+            // On va checker tous les nombres compris entre 2 et nb-1 pour voir s'ils divisent nbSaisi ou pas
+            for (let currentInt=2; currentInt<nbSaisi; currentInt++) {
+                if (nbSaisi % currentInt == 0) {
+                    estPremier = false;
+                    break; // Inutile de tester tous les autres diviseurs, autant sortir du for
+                }
+            }
+    
+            // Parametrized String (Template literals) : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals
+            // Opérateur conditionnel : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Conditional_Operator
+            console.log(`Le nombre ${nbSaisi} est-il un nombre premier ? --> ` + (estPremier ? "OUI" : "NON") );
+        }
+
+        console.log("A la prochaine, fieu !");
+
+        function askNumberToUser() {
+            return Number.parseInt(window.prompt("Veuillez saisir un nombre entier positif."));
+        }
+
+    </script>
+    
+</body>
+</html>
