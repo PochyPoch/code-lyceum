@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Extremums finder + sorter</title>
+</head>
+<body>
+
+    <script>
+
+        window.onload = main;
+
+        // Exercice :
+            // Implémenter les 3 fonctions
+            // Le programme doit retourner les bonnes valeurs
+
+        function main() {
+
+            const array_1 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
+            const array_2 = [-5, 48, 5348, -84, 0.5, 15.984, 7, 5, 45848, 0, 1, -1, -45848];
+
+            const min1 = findMinimumInArray(array_1);
+            const min2 = findMinimumInArray(array_2);
+
+            const max1 = findMaximumInArray(array_1);
+            const max2 = findMaximumInArray(array_2);
+
+            console.log("Extremums de array_1 : ["+min1+", "+max1+"]   --- array_1 : " + array_1);
+            console.log("Extremums de array_2 : ["+min2+", "+max2+"]   --- array_2 : " + array_2);
+
+            const sortedArray_1 = sortArray(array_1);
+            const sortedArray_2 = sortArray(array_2);
+
+            console.log("Array 1 après le tri : " + sortedArray_1);
+            console.log("Array 2 après le tri : " + sortedArray_2);
+        }
+
+        function findMaximumInArray(array) {
+            let max = Number.MIN_VALUE;
+
+            for (let i = 0; i < array.length; i ++) {
+                if (array [i] >= max){
+                    max = array[i];
+                }
+            }
+            return max;
+        }
+    
+        function findMinimumInArray(array) {
+            let min =  Number.MAX_VALUE;
+
+            for (let i = 0; i < array.length; i++) {
+                if (array [i] <= min){
+                    min = array[i];
+                }
+                        
+            }
+            // TODO
+            return min;
+        }
+
+        /**
+         * Trie un tableau de nombres et les retourne sous la forme d'un nouveau tableau.
+         * @param array Le tableau qu'on veut voir trié.
+         * @return {Array} Un nouveau tableau contenant les éléments de celui passé en paramètre, mais triés.
+         */
+
+        
+        function sortArray(array) {
+            let sortedArray = [];
+            
+            // TODO
+            let arrayTemp = [];
+             for (let i = 0; i < array.length; i ++) {
+                arrayTemp.push (array[i]);
+            }
+        
+            console.log ("Ceci est le tableau secondaire "+arrayTemp); 
+            
+            while (arrayTemp.length > 0) {
+
+                let min = Number.MAX_VALUE;
+                let minIndex = 0;
+
+                //trouve le minimum et sa position
+                for (let i = 0; i < arrayTemp.length; i++) {
+                    
+                    if (arrayTemp [i] <= min) {
+                        min = arrayTemp[i];
+                        minIndex = i;
+                    }
+                    
+                }
+                //slice ici => arrayTemp modifié
+                sortedArray.push(arrayTemp[minIndex]);
+                arrayTemp.splice(minIndex,1);
+                console.log(arrayTemp);
+
+
+                
+
+            }
+
+
+            //tant que le tableau contient des éléments looper le process
+
+            return sortedArray;
+
+        }
+
+    </script>
+    
+</body>
+</html>
